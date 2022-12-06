@@ -4,8 +4,7 @@ from requests.exceptions import RequestException, Timeout
 
 #Create app
 headers = {
-    'Authorization': 'STRIIM-TOKEN 01ed7583-7ab3-7421-b5af-0a4c7c2c0bb3',
-    'Content-Type': 'Content-Type'
+    'Authorization': 'STRIIM-TOKEN 01ed7583-7ab3-7421-b5af-0a4c7c2c0bb3'
 }
 
 data = {
@@ -16,7 +15,7 @@ data = {
     "parser": "string",
     "targetAdapter": "DatabaseWriter"
   },
-  "applicationName": "admin.test3",
+  "applicationName": "admin.test4",
   "applicationSettings": {
     "recovery": {
       "enabled": "true",
@@ -42,6 +41,6 @@ data = {
   "parserParameters": {},
   "formatterParameters": {}
 }
-response = requests.post(url='http://35.89.203.89:9080//api/v2/applications', headers=headers, data=data)
+response = requests.post(url='http://35.89.203.89:9080/api/v2/applications', headers=headers, json=data)
 
-print(response)
+print(response.text)
