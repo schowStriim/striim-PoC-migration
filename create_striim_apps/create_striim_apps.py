@@ -8,14 +8,14 @@ headers = {
 }
 
 data = {
-  "templateId": "database-to-database-initialload",
+  "templateId": "mysql-to-database-cdc",
   "templateDefinition": {
-    "sourceAdapter": "DatabaseReader",
+    "sourceAdapter": "MySQL",
     "formatter": "string",
     "parser": "string",
     "targetAdapter": "DatabaseWriter"
   },
-  "applicationName": "admin.test4",
+  "applicationName": "admin.test5",
   "applicationSettings": {
     "recovery": {
       "enabled": "true",
@@ -41,6 +41,6 @@ data = {
   "parserParameters": {},
   "formatterParameters": {}
 }
-response = requests.post(url='http://35.89.203.89:9080/api/v2/applications', headers=headers, json=data)
+response = requests.post(url='http://52.43.246.11:9080/api/v2/applications', headers=headers, json=data)
 
 print(response.text)
