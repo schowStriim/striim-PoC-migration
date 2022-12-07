@@ -1,2 +1,2 @@
 # striim-PoC-migration
-Striim PoC migration repository.
+This repository gives the user instructions on how to set up their first simple Striim Proof of Concept.
