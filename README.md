@@ -5,7 +5,7 @@ This repository provides instructions on how to create a basic Striim Poc (Proof
 1) Striim server is up and running.
    - More info: https://github.com/schowStriim/striim-installs
 2) Striim server is in the same region/account as the target database.
-3) Striim server can communicate with the source and target database.
+3) Striim server can connect to the source and target database.
 4) striim-PoC-migration repo is cloned in the striim server's home directory.
 5) Familiarity of Striim initial load vs Change-Data-Capture (CDC).
    - More info:
