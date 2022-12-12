@@ -14,12 +14,12 @@ This repository provides instructions on how to create a basic Striim Poc (Proof
       - CDC examples: https://www.striim.com/docs/en/sql-cdc-replication-examples.html
 
 ## Schema & Table set up process:
-1) Navigate to **<striim-home>/striim-PoC-migration/table-build/** directory.
+1) Navigate to **./striim-PoC-migration/table-build/** directory.
 2) Select your database sql file to create the PoC schema and table in your **source development database**.
    - For example: If you want to migrate an Oracle database to the cloud, please select oracle.sql
 3) Log in to your development source database.
 4) Execute the sql file selected on the previous step to create the Striim PoC source schema and table.
-5) Navigate to **<striim-home>/striim-PoC-migration/initial_load_data/** directory.
+5) Navigate to **./striim-PoC-migration/initial_load_data/** directory.
 6) Select your database sql file to ingest some data to the source table that was created in step #4.
 7) Select your database sql file to create the PoC schema and table in your **target development database**.
    - For example: If you want to migrate an Oracle database to GCP Big Query, please select bigquery.sql
