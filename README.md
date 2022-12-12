@@ -58,7 +58,7 @@ This repository provides instructions on how to create a basic Striim Poc (Proof
 17) Make sure the Input Stream name is the same as the name provided in step #11.
 18) Select "DatabaseWriter" in the adapter property.
 19) Provide the connection url in JDBC format in the connection url property.
-   - Note: The database name you specify in the Connection URL is the one where the striim schema.employee table was initially created in the **Schema & Tables set up process**.
+    - Note: The database name you specify in the Connection URL is the one where the striim schema.employee table was initially created in the **Schema & Tables set up process**.
 20) Provide username and password to access the database provided in the Connection URL property.
 21) In the Tables property, type in the following: striim_schema.employee,striim_schema.employee
 22) In the Batch and Commit Policy properties, type in the following: EventCount:10000,Interval:60
