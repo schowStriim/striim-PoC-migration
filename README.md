@@ -102,3 +102,16 @@ This repository provides instructions on how to create a basic Striim Poc (Proof
     - Note: For your initial migration, the values from the above Batch and Commit Policy are a good place to start, but this is entirely dependent on the specific environment and typically varies depending on the size of the source database and the Striim server.
 24) Scroll down and click on "Save".
 25) Click on the "Created" dropdown on the top, click "Deploy App", "Deploy", and then "Start App".
+
+## Test CDC Application:
+1) Verify the Striim CDC application is in Running state.
+2) Navigate to **<striim-home>/striim-PoC-migration/cdc_data/**.
+3) Execute <database>_insert.sql.
+4) Go to CDC Striim application and verify that the Total Input count is the same as the Total Output count.
+5) Execute `SELECT COUNT(*) FROM striim_schema.employee;` on both target and source database and verify that the value matches with the total count.
+6) Execute <database>_update.sql.
+7) Go to CDC Striim application and verify that the Total Input count is the same as the Total Output count.
+8) Execute `SELECT COUNT(*) FROM striim_schema.employee;` on both target and source database and verify that the value matches with the total count.
+9) Execute <database>_delete.sql.
+10) Go to CDC Striim application and verify that the Total Input count is the same as the Total Output count.
+11) Execute `SELECT COUNT(*) FROM striim_schema.employee;` on both target and source database and verify that the value matches with the total count.
