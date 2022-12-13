@@ -34,8 +34,8 @@ If you’re using your own sample dataset, proceed to the CDC configuration. Oth
       - Navigate to the link above.
       - Scroll down and click on "Oracle Reader" to view the supported Oracle versions.
       - Scroll down and click on "Configuring Oracle to use Oracle Reader" to enable CDC in your oracle database and create a user with all the privileges.
-   - (PostgreSQL Only) Execute this query to create a replication slot: SELECT pg_create_logical_replication_slot('striim_slot', 'wal2json');
-      - Verify it was created by running this query: SELECT * FROM pg_replication_slots;
+   - (PostgreSQL Only) Execute this query to create a replication slot: `SELECT pg_create_logical_replication_slot('striim_slot', 'wal2json');`
+      - Verify it was created by running this query: `SELECT * FROM pg_replication_slots;`
 3) Retrieve the LSN/Timestamp/SCN value from your source database: https://www.striim.com/docs/en/switching-from-initial-load-to-continuous-replication.html
 4) For future use, store the LSN/Timestamp/SCN value in a secure location. We are preserving this value in order to record all of the changes made throughout the initial load process.
 
@@ -110,13 +110,13 @@ If you’re using your own sample dataset, proceed to the CDC configuration. Oth
 2. Navigate to /striim-PoC-migration/cdc_data/.
 3. Execute < database >_insert.sql.
 4. Go to the Striim CDC application and verify that the Total Input count is the same as the Total Output count.
-5. Execute SELECT COUNT(*) FROM striim_schema.employee; on both target and source database and verify that the value matches with the total count.
+5. Execute `SELECT COUNT(*) FROM striim_schema.employee;` on both target and source database and verify that the value matches with the total count.
 6. Execute < database >_update.sql.
 7. Go to CDC Striim application and verify that the Total Input count is the same as the Total Output count.
-8. Execute SELECT COUNT(*) FROM striim_schema.employee; on both target and source database and verify that the value matches with the total count.
+8. Execute `SELECT COUNT(*) FROM striim_schema.employee;` on both target and source database and verify that the value matches with the total count.
 9. Execute < database >_delete.sql.
 10. Go to CDC Striim application and verify that the Total Input count is the same as the Total Output count.
-11. Execute SELECT COUNT(*) FROM striim_schema.employee; on both target and source database and verify that the value matches with the total count.
+11. Execute `SELECT COUNT(*) FROM striim_schema.employee;` on both target and source database and verify that the value matches with the total count.
 
 ## Execute your own test migration:
 1. With this test migration complete, you can proceed with your own test dataset.
