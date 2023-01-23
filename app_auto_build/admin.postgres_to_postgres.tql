@@ -1,0 +1,36 @@
+
+CREATE APPLICATION InitialLoad_PostgreSQLToAzureDBForPostgreSQL;
+
+CREATE OR REPLACE SOURCE PostgreSQL_Source USING Global.DatabaseReader ( 
+  ConnectionURL: 'jdbc:postgresql://localhost:5432/postgres', 
+  adapterName: 'DatabaseReader', 
+  QuiesceOnILCompletion: false, 
+  DatabaseProviderType: 'Postgres', 
+  FetchSize: 10000, 
+  Tables: 'dms_sample.nba_sporting_ticket', 
+  Password_encrypted: 'false', 
+  Username: 'postgres', 
+  Password: 'Z8qUWmkRpsCv50DF7fqslQ==' ) 
+OUTPUT TO InitialLoad_PostgreSQL_To_AzureDBPostgreSQL;
+
+CREATE OR REPLACE TARGET AzureDBForPostgreSQL_Target USING Global.DatabaseWriter ( 
+  ConnectionRetryPolicy: 'retryInterval=30, maxRetries=3', 
+  Tables: 'dms_sample.nba_sporting_ticket,dms_sample.nba_sporting_ticket', 
+  BatchPolicy: 'EventCount:10000,Interval:5', 
+  ConnectionURL: 'jdbc:postgresql://striimdemo.postgres.database.azure.com:5432/postgres', 
+  CheckPointTable: 'CHKPOINT', 
+  Password_encrypted: 'false', 
+  Username: 'striim@striimdemo', 
+  CDDLAction: 'Process', 
+  IgnorableExceptionCode: 'DUPLICATE_ROW_EXISTS', 
+  StatementCacheSize: '50', 
+  DatabaseProviderType: 'Default', 
+  ParallelThreads: '20', 
+  CommitPolicy: 'EventCount:10000,Interval:5', 
+  PreserveSourceTransactionBoundary: 'false', 
+  Password: 'oq6Vm3ZqnDW7Qs/uqjzZTw==', 
+  adapterName: 'DatabaseWriter' ) 
+INPUT FROM InitialLoad_PostgreSQL_To_AzureDBPostgreSQL;
+
+END APPLICATION InitialLoad_PostgreSQLToAzureDBForPostgreSQL;
+
