@@ -7,7 +7,7 @@ credentials = {
 auth = requests.post(url = 'http://54.201.160.136:9080/security/authenticate', data = credentials)
 
 token = auth.json().get('token')
-
+print(token)
 headers = {
     'authorization': 'STRIIM-TOKEN %s' % token,
     'content-type': 'text/plain',
