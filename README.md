@@ -73,9 +73,10 @@ If you’re using your own sample dataset, proceed to the CDC configuration. Oth
 25. In the Parallel Threads property, type in the following value: 10
    * Note: This value can be higher or lower depending on the size of the Striim server, but may not exceed the number of physical cores of the VM Striim is running on across all applications.
 26. Scroll down and click on "Save".
-27. Click on the "Created" dropdown on the top, click "Deploy App", "Deploy", and then "Start App".
-28. Wait until the Initial Load application is in COMPLETED state.
-29. In your target database, run a SELECT COUNT(*) FROM striim_schema.employee; query to verify that the total count matches with the count on your source database/table.
+27. **IMPORTANT:** You must disable foreign keys contraints and triggers before running the initial load.
+28. Click on the "Created" dropdown on the top, click "Deploy App", "Deploy", and then "Start App".
+29. Wait until the Initial Load application is in COMPLETED state.
+30. In your target database, run a SELECT COUNT(*) FROM striim_schema.employee; query to verify that the total count matches with the count on your source database/table.
 
 ## Create CDC application in Striim:
 1. Navigate to Apps -> Create Apps -> Start from Scratch again.
@@ -104,6 +105,7 @@ If you’re using your own sample dataset, proceed to the CDC configuration. Oth
 21. In the Tables property, type in the following: striim_schema.employee,striim_schema.employee
 22. Scroll down and click on "Save".
 23. Click on the "Created" dropdown on the top, click "Deploy App", "Deploy", and then "Start App".
+24. **IMPORTANT:** After the CDC is all caught up, we can undeploy the CDC app, remove the code in the Ignorable Code Exception, Re-enable all contraints and triggers and set up Auto-Recover mode.
 
 ## Test CDC Application:
 1. Verify the Striim CDC application is in Running state.
