@@ -4,10 +4,9 @@ This repository provides instructions on how to create a basic Striim test datab
 ## Pre-requisites
 1) Striim server is up and running (we suggest deploying Striim in the same region/cloud account as the target database).
    - More info: https://github.com/schowStriim/striim-installs
-2) Striim server is in the same region/account as the target database.
-3) Striim server can connect to the source and target database.
-4) striim-PoC-migration repo is cloned in the Striim server's home directory.
-5) General familiarity of database migrations, and the difference between  initial load and Change Data Capture (CDC).
+2) Striim server can connect to the source and target database.
+3) striim-PoC-migration repo is cloned in the Striim server's home directory.
+4) General familiarity of database migrations, and the difference between  initial load and Change Data Capture (CDC).
    - More info:
       - Change-Data-Capture (CDC): https://www.striim.com/docs/en/what-is-change-data-capture-.html
       - Initial Load vs CDC: https://www.striim.com/docs/en/initial-load-versus-continuous-replication.html
