@@ -102,9 +102,11 @@ If you’re using your own sample dataset, proceed to the CDC configuration. Oth
    * Note: The database name you specify in the Connection URL is the one where the Striim schema.employee table was initially created in the Schema & Tables set up process.
 20. Provide a username and password to access the database provided in the Connection URL property.
 21. In the Tables property, type in the following: striim_schema.employee,striim_schema.employee
-22. Scroll down and click on "Save".
-23. Click on the "Created" dropdown on the top, click "Deploy App", "Deploy", and then "Start App".
-24. **IMPORTANT:** After the CDC is all caught up, we can undeploy the CDC app, remove the code in the Ignorable Code Exception, Re-enable all contraints and triggers and set up Auto-Recover mode.
+22. In the Ignorable Exception Code property, provide the following: DUPLICATE_ROW_EXISTS, NO_OP_UPDATE, NO_OP_DELETE
+23. Scroll down and click on "Save".
+24. Enable Auto-Recovery mode by selecting -> "App Settings" -> Set a numeric value in the "Interval" property -> Click on "Save".
+25. Click on the "Created" dropdown on the top, click "Deploy App", "Deploy", and then "Start App".
+26. **IMPORTANT:** After the CDC is all caught up, we can undeploy the CDC app, remove the code in the Ignorable Code Exception, Re-enable all contraints and triggers and set up Auto-Recover mode.
 
 ## Test CDC Application:
 1. Verify the Striim CDC application is in Running state.
