@@ -106,7 +106,7 @@ If you’re using your own sample dataset, proceed to the CDC configuration. Oth
 23. Scroll down and click on "Save".
 24. Enable Auto-Recovery mode by selecting -> "App Settings" -> Set a numeric value in the "Interval" property -> Click on "Save".
 25. Click on the "Created" dropdown on the top, click "Deploy App", "Deploy", and then "Start App".
-26. **IMPORTANT:** After the CDC is all caught up, we can undeploy the CDC app, remove the code in the Ignorable Code Exception, Re-enable all contraints and triggers and set up Auto-Recover mode.
+26. **IMPORTANT:** After the CDC is all caught up, we can undeploy the CDC app, remove the code in the Ignorable Code Exception and Re-enable all contraints and triggers.
 
 ## Test CDC Application:
 1. Verify the Striim CDC application is in Running state.
